@@ -1,15 +1,26 @@
 <template>
     <div class="m-input">
         <div class="m-clear-input" v-show="inputValue.toString().length" @click="funClearIcon"></div>
-        <input type="text" :value="inputValue" v-model="inputValue" :placeholder="thisPlaceholder" v-if="mode=='text'">
-        <input type="number" :value="inputValue" v-model="inputValue" :placeholder="thisPlaceholder" v-if="mode=='number'">
+        <input type="text" :value="inputValue" v-model="inputValue" :placeholder="thisPlaceholder" v-if="inputType=='text'">
+        <input type="number" :value="inputValue" v-model="inputValue" :placeholder="thisPlaceholder" v-if="inputType=='number'">
     </div>
 </template>
 
 <script>
     export default {
         name: 'mInput',
-        props: ['mode', 'value', 'placeholder'],
+        props: {
+            inputType: {
+                type: String,
+                default: 'text'
+            },
+            value: {
+                default: '...'
+            },
+            placeholder: {
+                type: String
+            }
+        },
         data () {
             return {
                 type: this.mode,

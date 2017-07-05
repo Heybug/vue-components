@@ -1,12 +1,12 @@
 <template>
     <div class="hello">
-        <MInput class="m-i" mode="text" placeholder="姓名" :value="msg"></MInput>
-        <MInput class="m-i" mode="number" placeholder="年龄" :value="msg1"></MInput>
+        <cInput class="m-i" placeholder="姓名" :value="msg"></cInput>
+        <cInput class="m-i" inputType="number" placeholder="年龄" :value="msg1"></cInput>
     </div>
 </template>
 
 <script>
-    import MInput from '../components/MInput'
+    import cInput from '../components/c-input'
 
     export default {
         name: 'hello',
@@ -17,7 +17,7 @@
             }
         },
         methods: {},
-        components: {MInput}
+        components: {cInput}
     }
 </script>
 
